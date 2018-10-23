@@ -58,7 +58,7 @@ public class SnakeYu {
 				
 			};
             
-			//³õÊ¼»¯
+			//åˆå§‹åŒ–
 			jp.initMap();
 			Food.createFood();
 			Egg.createEgg();
@@ -68,7 +68,7 @@ public class SnakeYu {
 			window.frame.setVisible(true);
 			window.frame.getContentPane().add(jp);
 			
-			//Ä£Ê½Ñ¡Ôñ
+			//æ¨¡å¼é€‰æ‹©
 			window.comboBox.addActionListener(new ActionListener() {
 
 				@Override
@@ -78,17 +78,17 @@ public class SnakeYu {
 					JComboBox<String> jbox = (JComboBox<String>)e.getSource();
 					String level = (String) jbox.getSelectedItem();
 					switch(level) {
-					case "¼òµ¥":
+					case "ç®€å•":
 						sk.speed = 1000;
 						if(start == 1) 		
 							forward(sk,jp);
 					    break;
-					case "ÖĞµÈ":
+					case "ä¸­ç­‰":
 						sk.speed = 700;
 						if(start == 1) 		
 							forward(sk,jp);
 						break;
-					case "ÄÑ":
+					case "éš¾":
 						sk.speed = 500;
 						if(start == 1) 		
 							forward(sk,jp);
@@ -100,7 +100,7 @@ public class SnakeYu {
 				}
 			});
 			
-			//¿ªÊ¼
+			//å¼€å§‹
 			window.btnNewButton.addActionListener(new ActionListener() {
 
 				@Override
@@ -113,7 +113,7 @@ public class SnakeYu {
 				
 			});
 			
-			//ÅÅĞĞ°ñ
+			//æ’è¡Œæ¦œ
 			window.button.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
@@ -128,9 +128,9 @@ public class SnakeYu {
 			});
 
 
-			//¿ªÊ¼Ê±¼üÅÌ²»¿ÉÓÃ   
+			//å¼€å§‹æ—¶é”®ç›˜ä¸å¯ç”¨   
 			window.frame.setFocusable(false);
-			//¼üÅÌ¼àÌı
+			//é”®ç›˜ç›‘å¬
 			window.frame.addKeyListener(new KeyAdapter() {
 				public void keyPressed(KeyEvent e) {
 					int keycode = e.getKeyCode();
@@ -172,20 +172,20 @@ public class SnakeYu {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.GREEN);
-		frame.setTitle("ÑÇË÷µÄÌ°³ÔÉß");
+		frame.setTitle("äºšç´¢çš„è´ªåƒè›‡");
 		frame.setBounds(600, 100, 900, 700);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		btnNewButton = new JButton("\u5F00\u59CB");
 		btnNewButton.setBounds(720, 38, 135, 39);
-		btnNewButton.setFont(new Font("ËÎÌå", Font.PLAIN, 15));
+		btnNewButton.setFont(new Font("å®‹ä½“", Font.PLAIN, 15));
 		frame.getContentPane().add(btnNewButton);
 		
 		
 		
 		comboBox = new JComboBox<String>();
-		comboBox.setFont(new Font("ËÎÌå", Font.PLAIN, 26));
+		comboBox.setFont(new Font("å®‹ä½“", Font.PLAIN, 26));
 		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"\u7B80\u5355", "\u4E2D\u7B49", "\u96BE"}));
 		comboBox.setBounds(720, 118, 135, 39);
 		frame.getContentPane().add(comboBox);
@@ -193,7 +193,7 @@ public class SnakeYu {
 		JTextPane textPane = new JTextPane();
 		textPane.setBackground(Color.YELLOW);
 		textPane.setForeground(Color.RED);
-		textPane.setFont(new Font("ËÎÌå", Font.PLAIN, 31));
+		textPane.setFont(new Font("å®‹ä½“", Font.PLAIN, 31));
 		textPane.setText("\u9009\u62E9\u6A21\u5F0F\u540E\u518D\u6309\u5F00\u59CB\uFF01");
 		textPane.setBounds(709, 449, 167, 83);
 		frame.getContentPane().add(textPane);
@@ -206,14 +206,14 @@ public class SnakeYu {
 		frame.getContentPane().add(editorPane);
 		
 		JTextPane textPane_1 = new JTextPane();
-		textPane_1.setFont(new Font("ËÎÌå", Font.PLAIN, 26));
+		textPane_1.setFont(new Font("å®‹ä½“", Font.PLAIN, 26));
 		textPane_1.setBackground(Color.YELLOW);
 		textPane_1.setText("\u5206\u6570\uFF1A");
 		textPane_1.setBounds(720, 275, 117, 45);
 		frame.getContentPane().add(textPane_1);
 		
 		button = new JButton("\u6392\u884C\u699C");
-		button.setFont(new Font("ËÎÌå", Font.PLAIN, 16));
+		button.setFont(new Font("å®‹ä½“", Font.PLAIN, 16));
 		button.setBounds(720, 560, 117, 39);
 		frame.getContentPane().add(button);
 		
@@ -284,11 +284,11 @@ class Panel extends JPanel{
 		}
 		Point snakeHead = Snake.snake.getFirst();
 		System.out.println(snakeHead);
-		//ÉßÍ·
+		//è›‡å¤´
 		g.setColor(Color.RED);
 		g.fill3DRect(snakeHead.x*Panel.cell_width, snakeHead.y*Panel.cell_height,
 				Panel.cell_width, Panel.cell_height,true);
-		//ÉßÉí
+		//è›‡èº«
 		g.setColor(Color.green);
 		Point snakeBody;
 		for(int i=1;i<Snake.length;i++) {
@@ -297,11 +297,11 @@ class Panel extends JPanel{
 					Panel.cell_width, Panel.cell_height,true);
 		}
 		
-		//Ê³Îï
+		//é£Ÿç‰©
 		g.setColor(Color.pink);
 		g.fill3DRect(Food.food.x*cell_width, Food.food.y*cell_width, cell_width, cell_height, true);
 		
-		//²Êµ°
+		//å½©è›‹
 		if(Snake.length == 22) {
 		g.setColor(Color.yellow);
 		g.fill3DRect(Egg.egg.x*cell_width, Egg.egg.y*cell_width, cell_width, cell_height, true);
@@ -313,8 +313,8 @@ class Panel extends JPanel{
 		
 		System.out.println("newdirection="+dirc);
 		if(dirc+direction == 0) {
-			String message = "³õ¼¶ÓÃ»§²»ÄÜÍæ180¶ÈµôÍ·!";
-			JOptionPane.showMessageDialog(this, message, "¾¯¸æ", JOptionPane.WARNING_MESSAGE);
+			String message = "åˆçº§ç”¨æˆ·ä¸èƒ½ç©180åº¦æ‰å¤´!";
+			JOptionPane.showMessageDialog(this, message, "è­¦å‘Š", JOptionPane.WARNING_MESSAGE);
 		}
 		else
 			direction = dirc;
@@ -342,7 +342,7 @@ class Panel extends JPanel{
 		}
 		Point j = Snake.snake.getFirst();
 		
-		//ÅĞ¶ÏÉßÊÇ·ñ³Ôµ½×Ô¼º
+		//åˆ¤æ–­è›‡æ˜¯å¦åƒåˆ°è‡ªå·±
 		for(int i =1;i<Snake.length;i++)
 			if(Snake.snake.get(i).x == j.x && Snake.snake.get(i).y == j.y) {
 				SnakeYu.timer.cancel();
@@ -352,7 +352,7 @@ class Panel extends JPanel{
 			    SnakeYu.start = 0;
 			    System.exit(0);
 			}
-        //ÅĞ¶ÏÊÇ·ñ×²±Ú       
+        //åˆ¤æ–­æ˜¯å¦æ’å£       
 		if(j.x == 0 || j.x == Panel.X_Width -1 || j.y == Panel.Y_Width -1 || j.y == 0) {
 			SnakeYu.timer.cancel();
 			String message = "Gameover";
@@ -471,22 +471,3 @@ class Egg {
 	}
 	
 }
-
-	
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;;
